@@ -1,8 +1,4 @@
-﻿using GalaSoft.MvvmLight.Command;
-using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
+﻿using System.Collections.ObjectModel;
 using WpfApp1.Models;
 using WpfApp1.Views.Base;
 
@@ -30,13 +26,5 @@ namespace WpfApp1.Views.Main
 
             Employees.Add(employee);
         }
-
-        public ICommand EmployeeCommand => new RelayCommand(Test);
-
-        private void Test()
-        {
-            MessageBox.Show("test");
-        }
     }
-
 }
