@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp1.Views.Main.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Views.Main"
+        mc:Ignorable="d"
+        Title="Main" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance local:MainViewModel}">
+
+    <Grid>
+        <ListView ItemsSource="{Binding Employees}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn>
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="Imię"
+                                                  Foreground="#131313"/>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="{Binding Name}"
+                                        Command="{Binding EmployeeCommand}"
+                                        Foreground="#131313"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="Nazwisko"
+                                                  Foreground="#131313"/>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding LastName}"
+                                       Foreground="#131313"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
